@@ -11,14 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/main', function () {
-    return view('freelancer.freelancerhome');
-});
+Route::get('/','HALAteeqControllers\FreelancerController@main');
+Route::get('/sbadmin','HALAteeqControllers\SBAdminController@main');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');

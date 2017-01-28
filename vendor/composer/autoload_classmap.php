@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateMultiTenantTable' => $baseDir . '/database/migrations/2017_01_28_070403_create_multi_tenant_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateTenantsTable' => $baseDir . '/database/migrations/2017_01_28_070403_create_tenants_table.php',
     'CreateUserMultiTenantTable' => $baseDir . '/database/migrations/2017_01_28_070644_create_user_multi_tenant_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',

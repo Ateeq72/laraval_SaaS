@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMultiTenantTable extends Migration
+class CreateTenantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMultiTenantTable extends Migration
      */
     public function up()
     {
-        Schema::create('multi_tenant', function (Blueprint $table) {
+        Schema::create('tenants', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tenant_name')->index();
             $table->string('tenant_paid')->index();
@@ -31,6 +31,6 @@ class CreateMultiTenantTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('multi_tenant');
+        Schema::dropIfExists('tenants');
     }
 }

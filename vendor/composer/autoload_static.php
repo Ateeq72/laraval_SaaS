@@ -272,8 +272,8 @@ class ComposerStaticInit222dbee45fa3214daa7801ef7bad0887
     );
 
     public static $classMap = array (
-        'CreateMultiTenantTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_28_070403_create_multi_tenant_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateTenantsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_28_070403_create_tenants_table.php',
         'CreateUserMultiTenantTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_28_070644_create_user_multi_tenant_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

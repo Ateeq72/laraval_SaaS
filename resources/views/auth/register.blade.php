@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('freelancer.layouts.app')
 
 @section('content')
-<div class="container">
+<section id="register">
+    <p><br></p>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -19,6 +20,20 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('tenant_name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Company Name</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="tenant_name" value="{{ old('tenant_name') }}" required autofocus>
+
+                                @if ($errors->has('tenant_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tenant_name') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -72,5 +87,5 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
