@@ -6,6 +6,7 @@ use App\Tenants;
 use App\User;
 use App\Http\Controllers\Controller;
 use App\UserMultiTenant;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -53,7 +54,6 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'tenant_name' => 'required|max:255',
         ]);
     }
 
@@ -65,27 +65,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-
-        $tenant = Tenants::where('tenant_name',$data['tenant_name'])->first();
-
-        if($tenant == null){
-            $tenant = Tenants::create([
-                'tenant_name' => $data['tenant_name'],
-                'tenant_paid' => 'N',
-            ]);
-        }
-
-        $userTenant = UserMultiTenant::create([
-           'user_id' => $user->id,
-           'tenant_id' => $tenant->id,
-        ]);
-
-        return $user;
-
     }
 }

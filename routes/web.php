@@ -13,7 +13,7 @@
 
 Route::get('/','HALAteeqControllers\FreelancerController@main');
 Route::get('/sbadmin','HALAteeqControllers\SBAdminController@main');
+Route::get('/profile','HALAteeqControllers\ProfileController@main');
+Route::post('/updateprofile','HALAteeqControllers\ProfileController@updateProfile');
 
 Auth::routes();
-
-//Route::get('/home', 'HomeController@index');

@@ -27,7 +27,7 @@ class FreelancerController extends Controller
         else{
             $user = 'Guest';
         }
-        return view('freelancer.freelancerhome')->with('userName',$user);
+        return view('freelancer.freelancerhome');
     }
 
 }
