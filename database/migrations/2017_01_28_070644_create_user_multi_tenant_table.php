@@ -19,6 +19,8 @@ class CreateUserMultiTenantTable extends Migration
             $table->integer('tenant_id')->index();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 
